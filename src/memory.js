@@ -4,8 +4,10 @@
 var MemoryGame = function (cards) {
  this.cards = cards;
  this.pickedCards = [];
- this.pairsClicked = [];
- this.pairsGuessed = [];
+ this.pairsClicked = 0;
+ this.pairsGuessed = 0;
+ this.currentPair = [];
+
 };
 /* he utilizado el algoritmo para repartir cartas de Fisher-Yates
 basicamente consiste en cambiar la posicion de dos elementos del
@@ -27,16 +29,17 @@ return cardsArr;
 
 MemoryGame.prototype.checkIfPair = function (firstCard, secondCard) {
 
-  pairsClicked += 1;
+  this.pairsClicked++;
 
-  if (firstCard == secondCard) {
-    pairsGuessed += 1;
-    return true
+  if (firstCard.attr('name') == secondCard.attr('name')) {
+    this.pairsGuessed += 1;
+    return true;
   }
+  return false;
 }
 
 MemoryGame.prototype.finished = function () {
-if (pairsGuessed == 12) {
-  return alert("has ganado")
+if (this.pairsGuessed == 12) {
+  return true;
 }
  };

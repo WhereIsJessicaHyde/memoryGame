@@ -27,6 +27,7 @@ var cards = [
 
 $(document).ready(function(){
   var memoryGame = new MemoryGame(cards);
+  memoryGame.shuffleCard(cards);
   var html = '';
   memoryGame.cards.forEach(function (pic, index) {
     html += '<div class= "card" id="card_' + pic.name + '">';
@@ -43,7 +44,37 @@ $(document).ready(function(){
   document.getElementById('memory_board').innerHTML = html;
   // Bind the click event of each element to a function
 $('.back').on('click', function () {
-    $(this).removeClass("back card");
-    $(this).addClass("front");
+    $(this).toggle();
+  	$(this).siblings().toggle();
+
+    memoryGame.currentPair.push($(this));
+
+    if (memoryGame.currentPair.length == 2) {
+      var res = memoryGame.checkIfPair(memoryGame.currentPair[0],
+        memoryGame.currentPair[1]);
+
+      $('#pairs_clicked').text(memoryGame.pairsClicked);
+      $('#pairs_guessed').text(memoryGame.pairsGuessed);
+
+      $('.back').addClass('blocked');
+
+      if(!res) {
+        setTimeout(function () {
+          memoryGame.currentPair[0].toggle();
+          memoryGame.currentPair[0].siblings().toggle();
+          memoryGame.currentPair[1].toggle();
+          memoryGame.currentPair[1].siblings().toggle();
+          memoryGame.currentPair = [];
+          $('.back').removeClass('blocked');
+        },1000) }
+      else {
+          memoryGame.currentPair = [];
+          $('.back').removeClass('blocked');
+        }
+      }
+      if (memoryGame.finished()) {
+      alert('You win');
+  }
 });
+
 });
