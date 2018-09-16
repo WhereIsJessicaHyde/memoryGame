@@ -6,11 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Antonio Jesús Navarro Expósito",
+  "author": "Where is Yesica Hide",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.24.6",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.1",
     "gulp-watch": "^5.0.1"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WhereIsJessicaHyde/memoryGame.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WhereIsJessicaHyde/memoryGame/issues"
+  },
+  "homepage": "https://github.com/WhereIsJessicaHyde/memoryGame#readme"
 }
