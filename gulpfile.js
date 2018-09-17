@@ -8,7 +8,7 @@ var autoPrefixer = require ('gulp-autoprefixer');
 
 gulp.task('sass', function () {
   return gulp.src('./sass/**/*.scss')
-    .pipe(autoprefixer())
+    // .pipe(autoprefixer())
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('stylesheets'));
 });
@@ -20,10 +20,10 @@ gulp.task('server', function() {
       baseDir: "./"
     }
   });
-   gulp.watch("sass/style.scss", ['sass']).on('change', reload);
-   gulp.watch("./css/style.css").on('change', reload);
-   gulp.watch("./js/main.js").on('change', reload);
-   gulp.watch("./js/memory.js").on('change', reload);
+   gulp.watch("sass/style.scss", ['sass']);
+   gulp.watch("./stylesheets/style.css").on('change', reload);
+   gulp.watch("./src/main.js").on('change', reload);
+   gulp.watch("./src/memory.js").on('change', reload);
    gulp.watch("./index.html").on("change", reload);
 
 });
