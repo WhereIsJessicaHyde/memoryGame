@@ -3,7 +3,7 @@ html {
   background-size: cover;
   font-family: "Helvetica Neue", Arial, sans-serif; }
 
-#memory_board {
+.memory-board {
   background: #ddd;
   width: 800px;
   height: 540px;
@@ -34,7 +34,7 @@ html {
   .front .blocked {
     pointer-events: none; }
 
-#score {
+.score {
   background-color: rgba(215, 44, 44, 0.8);
   border-radius: 8px;
   font-size: 30px;

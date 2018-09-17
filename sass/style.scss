@@ -15,7 +15,7 @@ html {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-#memory_board {
+.memory-board {
   background:$background-memory;
 	width:800px;
 	height:540px;
@@ -43,7 +43,7 @@ html {
     }
   };
 
-#score {
+.score {
   background-color: rgba(215, 44, 44, 0.8);;
   border-radius: 8px;
   font-size: 30px;

@@ -41,8 +41,9 @@ $(document).ready(function(){
   });
 
   // Add all the div's to the HTML
-  document.getElementById('memory_board').innerHTML = html;
+  document.querySelector('.memory-board').innerHTML = html;
   // Bind the click event of each element to a function
+
 $('.back').on('click', function () {
     $(this).toggle();
   	$(this).siblings().toggle();
@@ -53,8 +54,8 @@ $('.back').on('click', function () {
       var res = memoryGame.checkIfPair(memoryGame.currentPair[0],
         memoryGame.currentPair[1]);
 
-      $('#pairs_clicked').text(memoryGame.pairsClicked);
-      $('#pairs_guessed').text(memoryGame.pairsGuessed);
+      $('.score__pairs-clicked').text(memoryGame.pairsClicked);
+      $('.score__pairs-guessed').text(memoryGame.pairsGuessed);
 
       $('.back').addClass('blocked');
 
