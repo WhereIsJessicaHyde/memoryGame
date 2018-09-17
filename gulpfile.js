@@ -5,7 +5,7 @@ var autoPrefixer = require ('gulp-autoprefixer');
 
 
 gulp.task('sass', function () {
-  return gulp.src('./sass/main.sass')
+  return gulp.src('./sass/**/*.sass')
     //.pipe(autoPrefixer())
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./stylesheets'));
