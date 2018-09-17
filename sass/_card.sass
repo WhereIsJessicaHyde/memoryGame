@@ -1,25 +1,22 @@
 @mixin card
   width: 71px
-	height: 71px
-	float: left
-	margin: 10px
-	padding: 20px
-	font-size: 64px
+  height: 71px
+  float: left
+  margin: 10px
+  padding: 20px
+  font-size: 64px
 
-
-.card
-  .back
-    @include card
-    background-color: #456783
-    .blocked
-      pointer-events: none
+.back
+  @include card
+  background-color: #456783
+  .blocked
+    pointer-events: none
 
 .front
   @include card
   display: none
   .blocked
     pointer-events: none
-
 
 .container
   position: relative

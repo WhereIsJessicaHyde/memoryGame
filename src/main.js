@@ -24,7 +24,6 @@ var cards = [
   { name: 'the avengers',    img: 'the-avengers.jpg' },
   { name: 'thor',            img: 'thor.jpg' }
 ];
-
 $(document).ready(function(){
   var memoryGame = new MemoryGame(cards);
   memoryGame.shuffleCard(cards);

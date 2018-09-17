@@ -1,18 +1,13 @@
-html {
-  background: url("/img/background.jpg") no-repeat;
-  background-size: cover;
-  font-family: "Helvetica Neue", Arial, sans-serif; }
-
 .memory-board {
-  background: #ddd;
   width: 800px;
   height: 540px;
   padding: 70px;
   margin: 0px auto;
   border-radius: 84px;
-  box-shadow: inset 0px 0px 20px -6px #615961; }
+  box-shadow: inset 0px 0px 20px -6px #615961;
+  background: #ddd; }
 
-.card .back {
+.back {
   width: 71px;
   height: 71px;
   float: left;
@@ -20,7 +15,7 @@ html {
   padding: 20px;
   font-size: 64px;
   background-color: #456783; }
-  .card .back .blocked {
+  .back .blocked {
     pointer-events: none; }
 
 .front {
@@ -34,18 +29,13 @@ html {
   .front .blocked {
     pointer-events: none; }
 
-.score {
-  background-color: rgba(215, 44, 44, 0.8);
-  border-radius: 8px;
-  font-size: 30px;
-  font-family: Arial;
-  width: 200px;
-  padding: 20px;
-  padding-top: 0;
-  margin-left: 75%; }
-
 .container {
   position: relative; }
+
+html {
+  background: url("/img/background.jpg") no-repeat;
+  background-size: cover;
+  font-family: "Helvetica Neue", Arial, sans-serif; }
 
 h1 {
   color: rgba(215, 40, 40, 0.9);
@@ -66,3 +56,13 @@ p {
   font-weight: bolder;
   font-size: 20px;
   text-align: center; }
+
+.score {
+  background-color: rgba(215, 44, 44, 0.8);
+  border-radius: 8px;
+  font-size: 30px;
+  font-family: Arial;
+  width: 200px;
+  padding: 20px;
+  padding-top: 0;
+  margin-left: 75%; }

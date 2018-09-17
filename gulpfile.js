@@ -1,33 +1,20 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
 var sass = require('gulp-sass');
 var autoPrefixer = require ('gulp-autoprefixer');
 
 
 gulp.task('sass', function () {
-  return gulp.src('./sass/**/*.sass')
-    // .pipe(autoprefixer())
+  return gulp.src('./sass/main.sass')
+    //.pipe(autoPrefixer())
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('stylesheets'));
+    .pipe(gulp.dest('./stylesheets'));
 });
 
 // watch Sass files for changes, run the Sass preprocessor with the 'sass' task and reload
-gulp.task('server', function() {
-  browserSync.init( {
-    server: {
-      baseDir: "./"
-    }
+gulp.task('watch-sass', function() {
+   gulp.watch("./sass/**/*.sass", ['sass']);
   });
-   gulp.watch("sass/style.sass", ['sass']);
-   gulp.watch("./stylesheets/style.css").on('change', reload);
-   gulp.watch("./src/main.js").on('change', reload);
-   gulp.watch("./src/memory.js").on('change', reload);
-   gulp.watch("./index.html").on("change", reload);
-
-});
-
 
 //Vuelve a ejecutar la tarea cuando se modifica algún archivo
-gulp.task('default', ['server']);
+gulp.task('default', ['watch-sass']);
