@@ -1,58 +1,90 @@
 .memory-board {
-  width: 800px;
-  height: 540px;
-  padding: 70px;
+  width: 1200px;
+  height: 599px;
+  padding: 18px 70px;
   margin: 0px auto;
-  border-radius: 84px;
-  box-shadow: inset 0px 0px 20px -6px #615961;
+  box-sizing: border-box;
+  border-radius: 0 0 84px 84px;
   background: #ddd; }
+  .memory-board__inner {
+    margin: 0;
+    padding: 0; }
 
-.back {
-  width: 71px;
-  height: 71px;
-  float: left;
-  margin: 10px;
-  padding: 20px;
-  font-size: 64px;
-  background-color: #456783; }
-  .back .blocked {
-    pointer-events: none; }
-
-.front {
-  width: 71px;
-  height: 71px;
-  float: left;
-  margin: 10px;
-  padding: 20px;
-  font-size: 64px;
-  display: none; }
-  .front .blocked {
-    pointer-events: none; }
-
-.container {
-  position: relative; }
+.card {
+  position: relative;
+  top: 18px;
+  left: 12px; }
+  .card__back {
+    border-radius: 6px;
+    width: 71px;
+    height: 116px;
+    float: left;
+    margin: 10px;
+    padding: 20px;
+    font-size: 64px;
+    background-color: white;
+    background: url("../img/playing-card-back.jpg");
+    background-size: 100%; }
+    .card__back .blocked {
+      pointer-events: none; }
+  .card__front {
+    border-radius: 6px;
+    width: 71px;
+    height: 116px;
+    float: left;
+    margin: 10px;
+    padding: 20px;
+    font-size: 64px;
+    background-color: white;
+    display: none; }
+    .card__front .blocked {
+      pointer-events: none; }
+    .card__front img {
+      width: 100%;
+      height: 100%; }
 
 .score {
   background-color: rgba(215, 44, 44, 0.8);
-  border-radius: 8px;
+  border-radius: 84px 84px 0 0;
+  box-sizing: border-box;
   font-size: 30px;
   font-family: Arial;
-  width: 200px;
-  padding: 20px;
-  padding-top: 0;
-  margin-left: 75%; }
+  width: 1200px;
+  padding: 30px;
+  left: -600px;
+  position: relative;
+  margin-left: 50%;
+  display: inline-block; }
+  .score__pairs-clicked, .score__pairs-guessed {
+    color: white; }
+
+.font-light {
+  font-weight: 300; }
 
 html {
-  background: url("/img/background.jpg") no-repeat;
+  background: Url("../img/pattern.jpg"), no-repeat;
   background-size: cover;
-  font-family: "Helvetica Neue", Arial, sans-serif; }
+  font-family: Montserrat, "Helvetica Neue", Arial, sans-serif;
+  -webkit-animation: backgroundScroll 20s linear infinite;
+  animation: backgroundScroll 20s linear infinite; }
+
+@-webkit-keyframes backgroundScroll {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: -400px 0; } }
+
+@keyframes backgroundScroll {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: -400px 0; } }
 
 h1 {
-  color: rgba(215, 40, 40, 0.9);
-  font-weight: bolder;
-  font-size: 67px;
+  color: rgba(215, 44, 44, 0.8);
   text-align: center;
-  text-shadow: 0px 0px 20px #969696; }
+  font-weight: bolder;
+  font-size: 67px; }
 
 h2 {
   color: #456783;
@@ -60,9 +92,13 @@ h2 {
   font-size: 35px;
   text-align: center;
   text-shadow: 1px #ff0000;
-  text-shadow: 1px #ff0000; }
+  text-shadow: 1px #ff0000;
+  display: inline;
+  margin: auto; }
 
 p {
+  display: inline;
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 30px;
+  margin: auto 20px;
   text-align: center; }

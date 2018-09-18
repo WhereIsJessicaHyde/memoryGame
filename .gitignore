@@ -1,3 +1,4 @@
 node_modules
 testing
 .eslintrc.json
+gulpfile.js

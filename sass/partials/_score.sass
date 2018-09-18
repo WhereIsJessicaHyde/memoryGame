@@ -1,11 +1,19 @@
-
-
 .score
-  background-color: rgba(215, 44, 44, 0.8)
-  border-radius: 8px
+
+  background-color: $primary-color
+  border-radius: 84px 84px 0 0
+  box-sizing: border-box
   font-size: 30px
   font-family: Arial
-  width: 200px
-  padding: 20px
-  padding-top: 0
-  margin-left: 75%
+  width: 1200px
+  padding: 30px
+  left: -600px
+  position: relative
+  margin-left: 50%
+  display: inline-block
+
+  &__pairs-clicked, &__pairs-guessed
+    color: white
+
+.font-light
+  font-weight: 300

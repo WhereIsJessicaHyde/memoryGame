@@ -5,16 +5,30 @@
 @import "partials/score"
 
 html
-  background: url("/img/background.jpg") no-repeat
+  background: Url('../img/pattern.jpg'), no-repeat
   background-size: cover
-  font-family: "Helvetica Neue", Arial, sans-serif
+  font-family: $primary-font, "Helvetica Neue", Arial, sans-serif
+  -webkit-animation: backgroundScroll 20s linear infinite
+  animation: backgroundScroll 20s linear infinite
+
+@-webkit-keyframes backgroundScroll
+  from
+    background-position: 0 0
+  to
+    background-position: -400px 0
+
+@keyframes backgroundScroll
+  from
+    background-position: 0 0
+  to
+    background-position: -400px 0
 
 h1
-  color: rgba(215, 40, 40, 0.9)
+  color: $primary-color
+  text-align: center
   font-weight: bolder
   font-size: 67px
-  text-align: center
-  text-shadow: 0px 0px 20px rgba(150, 150, 150, 1)
+
 
 
 h2
@@ -24,9 +38,13 @@ h2
   text-align: center
   text-shadow: 1px #ff0000
   text-shadow: 1px #ff0000
+  display: inline
+  margin: auto
 
 
 p
+  display: inline
   font-weight: bolder
-  font-size: 20px
+  font-size: 30px
+  margin: auto 20px
   text-align: center
